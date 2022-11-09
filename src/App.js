@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 // import Header from "./components/Header"
 // import Login from "./components/Login"
 import User from "./components/User"
+import Counter from "./components/Counter"
+import Colors from "./components/Colors"
+import Form from "./components/Form"
 
 
 // const isLoggedIn = false;
@@ -9,29 +12,35 @@ import User from "./components/User"
 // let surname = "Aybek";
 // const fullName = "Eray Aybek"
 
-const user = {
 
-}
 function App() {
 
+  const [isVisible, setIsVisible] = useState(true)
   return (
  
     <div>
-      <User 
+      
+      {isVisible && <Counter/>}
+      <button onClick={() => setIsVisible(!isVisible)}>
+      Göster/Gizle
+      </button>
+      
+      {/* <Form/> */}
+      {/* <Colors/> */}
+      {/* <User/> */}
+      {/* <User 
         // name = "Eray"
         // city = "İstanbul"
         // age = {23}
 
-
-
-        title = "Başlık"
-        data={{  
-          name: 'Eray Aybek',
-          city: 'İstanbul',
-          age: 23,
-          }} 
-          friends = {["Ahmet", "Mehmet", "Ayşe"]}
-      /> 
+        // title = "Başlık"
+        // data={{  
+        //   name: 'Eray Aybek',
+        //   city: 'İstanbul',
+        //   age: 23,
+        //   }} 
+        //   friends = {["Ahmet", "Mehmet", "Ayşe"]}
+      />  */}
     </div>
     
   );

@@ -1,15 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from "prop-types"
 
-function User({title, data, friends}) {
+function User() {
 
 // const data = props.data
 // const {data} = props
 // const {name, age, city} = props.data
-
+const [user, setUser] = useState({name:'Eray', surname: 'Aybek'})
   return (
     <div>
-        <strong>{title}</strong>
+        <h2>User</h2>
+        {user.name} {user.surname}
+
+        <br/>
+        <button onClick={() => setUser({...user, name: 'Ahmet'})}>
+        {/* <button onClick={() => setUser(prev) => ({...prev, name: "Ahmet"})}> */}
+          İsmi değiştir
+          </button>
+        <button onClick={() => setUser({...user, surname: 'Falan'})}>
+          {/* <button onClick={() => setUser(prev) => ({...prev, surname: "Falan"})}> */}
+          Soyismi değiştir
+          </button>
+
+        {/* <strong>{title}</strong>
         <div>İsim: {data.name}</div>
         <div>Yaş: {data.age}</div>
         <div>Şehir: {data.city}</div>
@@ -20,30 +33,30 @@ function User({title, data, friends}) {
                 <div key={i}>{friend}</div>
             ))
         }
-        <hr />
+        <hr /> */}
     </div>
   )
 }
 
-User.propTypes = {
-    // name: PropTypes.string.isRequired,
-    // age: PropTypes.number.isRequired,
-    // city: PropTypes.string.isRequired,
-    title: PropTypes.string,
-    data: PropTypes.exact({
-        name: PropTypes.string,
-        age: PropTypes.number,
-        city: PropTypes.string,
-    }),
-    friends: PropTypes.array,
-}
-
-User.defaultProps = {
-    title: "Kişi",
-}
 
 export default User;
 
+//User.propTypes = {
+    //     // name: PropTypes.string.isRequired,
+    //     // age: PropTypes.number.isRequired,
+    //     // city: PropTypes.string.isRequired,
+    //     title: PropTypes.string,
+    //     data: PropTypes.exact({
+    //         name: PropTypes.string,
+    //         age: PropTypes.number,
+    //         city: PropTypes.string,
+    //     }),
+    //     friends: PropTypes.array,
+    // }
+    
+    // User.defaultProps = {
+    //     title: "Kişi",
+    // }
 // function User({data: {name, age, city}}) {
 //     return (
 //       <div>User
